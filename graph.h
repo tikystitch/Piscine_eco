@@ -325,7 +325,10 @@ class Graph
         void make_example(std::string a);
 
         void Suppression();
+<<<<<<< HEAD
         void SuppressionPar_Space();
+=======
+>>>>>>> test
         void test_remove_edge(int eidx);
         void Supp_Sommet_Arete(int idx);
 
@@ -339,3 +342,5 @@ class Graph
 
 
 #endif // GRAPH_H_INCLUDED
+
+//8451237845613

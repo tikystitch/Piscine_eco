@@ -1,0 +1,17 @@
+10
+5
+0 1.42857 76 -5 lionn.bmp
+1 1.42857 256 -5 leopard1.bmp
+2 1.42857 436 -5 guepard1.bmp
+3 1.42857 636 -5 hyene1.bmp
+4 3 76 206 buffle1.bmp
+5 3 256 206 gnou1.bmp
+7 3 596 206 zebre1.bmp
+8 1.42857 756 206 gazelle1.bmp
+9 25.7143 656 364 babouin1.bmp
+10 25.7143 76 356 hippotame1.bmp
+0 4 0 3
+1 5 0 4
+3 7 0 8
+4 8 0 7
+6 8 3 3

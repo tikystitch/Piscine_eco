@@ -7,6 +7,8 @@
 
 /// Le constructeur met en place les éléments de l'interface
 VertexInterface::VertexInterface(int idx, int x, int y, std::string pic_name, int pic_idx)
+
+// maich
 {
     // La boite englobante
     m_top_box.set_pos(x, y);
@@ -358,12 +360,17 @@ void Graph::Suppression()
     {
         if ((it->second).m_interface->m_croix.getVerifSupp() == true)
         {
+<<<<<<< HEAD
+=======
+            //test_remove_edge(it->first);
+>>>>>>> test
             Supp_Sommet_Arete(it->first);
         }
     }
 
 }
 
+<<<<<<< HEAD
 
 void Graph::SuppressionPar_Space()
 {
@@ -394,6 +401,8 @@ void Graph::SuppressionPar_Space()
 
 }
 
+=======
+>>>>>>> test
 /// La méthode update à appeler dans la boucle de jeu pour les graphes avec interface
 void Graph::update()
 {
@@ -403,7 +412,11 @@ void Graph::update()
     for (auto &elt : m_vertices)
         elt.second.pre_update();
 
+<<<<<<< HEAD
     ajouter_Arete();
+=======
+         ajouter_Arete();
+>>>>>>> test
 
     for (auto &elt : m_edges)
         elt.second.pre_update();
@@ -483,6 +496,10 @@ void Graph::ajouter_sommet()
             }
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> test
     for (std::map<int,Vertex>::iterator it= m_vertices.begin(); it!= m_vertices.end(); ++it)
     {
         if ((it->second).m_interface->m_top_box.getCopie() == true)
@@ -504,7 +521,10 @@ void Graph::ajouter_Arete()
 {
     //std::map<int, Vertex>::iterator it;
     int temp;
+<<<<<<< HEAD
     int blindage=0;
+=======
+>>>>>>> test
     std::vector<int> tempoPourMap; ///Variable temporaire pour le tri
 
     for ( std::map<int,Vertex>::iterator it= m_vertices.begin(); it != m_vertices.end(); ++it)
@@ -533,6 +553,7 @@ void Graph::ajouter_Arete()
                             }
                         }
                     }
+<<<<<<< HEAD
 
                     for (std::map<int, Edge>::iterator blind= m_edges.begin(); blind != m_edges.end(); ++blind )
                     {
@@ -543,6 +564,10 @@ void Graph::ajouter_Arete()
                     {
                         add_interfaced_edge(tempoPourMap[0]+1, it->first, op->first, 50.0);
                     }
+=======
+                    std::cout << "zrbhzgohnzr" <<std::endl;
+                    add_interfaced_edge(tempoPourMap[0]+1, it->first, op->first, 50.0);
+>>>>>>> test
                     (it->second).m_interface->m_top_box.setFromAjout(false);
                     (it->second).m_interface->m_top_box.setToAjout(false);
                     (op->second).m_interface->m_top_box.setToAjout(false);
@@ -551,6 +576,10 @@ void Graph::ajouter_Arete()
             }
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> test
 }
 
 
