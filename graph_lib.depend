@@ -817,11 +817,13 @@
 	"graph.h"
 	"menu.h"
 
-1523114921 source:c:\users\lucie\desktop\piscine\piscine_eco\graph.cpp
+1523115636 source:c:\users\lucie\desktop\piscine\piscine_eco\graph.cpp
 	"graph.h"
 	<map>
+	<string>
+	<stack>
 
-1523114921 c:\users\lucie\desktop\piscine\piscine_eco\graph.h
+1523115730 c:\users\lucie\desktop\piscine\piscine_eco\graph.h
 	<fstream>
 	<iostream>
 	<vector>

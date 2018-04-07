@@ -352,6 +352,8 @@ class Graph
         // Ajouter sommet
         void ajouter_sommet();
         void ajouter_Arete();
+
+        bool connexite(std::string nom_fichier);
 };
 
 

@@ -1,6 +1,10 @@
 #include <allegro.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#include <string>
+#include <stack>
+
 #include "graph.h"
 #include "menu.h"
 
@@ -127,6 +131,16 @@ void menu()
             matrice1 = "matrice.txt";
             clear_bitmap(page);
             graphe(savane, &quitter, matrice1);
+
+
+            if(connexite("eco1.txt")==true)
+            {
+                std::cout << "vous avez une connexite " << std::endl;
+            }
+            else
+                {
+                std::cout << "vous n'avez pas de connexite" << std::endl;
+                }
         }
 
         if(mouse_b&1 && mouse_x > 215 && mouse_x < 590 && mouse_y > 250 && mouse_y < 290 )
@@ -147,10 +161,6 @@ void menu()
             graphe( banquise, &quitter, matrice3);
         }
 
-        if(key[KEY_4])
-        {
-
-        }
 
     }
     while (quitter == 0);

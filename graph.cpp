@@ -1,6 +1,9 @@
 #include "graph.h"
 #include <map>
 
+#include <string>
+#include <stack>
+
 /***************************************************
                     VERTEX
 ****************************************************/
@@ -838,8 +841,8 @@ nbsommet = m_vertices.size();
         }
     }
 
-
-bool connexite(std::string nom_fichier)
+*/
+bool Graph::connexite(std::string nom_fichier)
 {
     std::ifstream fichier(nom_fichier, std::ios::in);
     int ordre;
@@ -886,5 +889,5 @@ bool connexite(std::string nom_fichier)
         return true;
 
 
-}*/
+}
 
