@@ -747,3 +747,73 @@
 	"graph.h"
 	<map>
 
+1523098623 source:c:\users\lucie\desktop\piscine\piscine_eco\graph.cpp
+	"graph.h"
+	<map>
+
+1523098623 c:\users\lucie\desktop\piscine\piscine_eco\graph.h
+	<fstream>
+	<iostream>
+	<vector>
+	<map>
+	<string>
+	<memory>
+	"grman/grman.h"
+
+1523098623 c:\users\lucie\desktop\piscine\piscine_eco\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1523098623 c:\users\lucie\desktop\piscine\piscine_eco\grman\grman_couleurs.h
+
+1523098623 c:\users\lucie\desktop\piscine\piscine_eco\grman\coords.h
+	<cmath>
+
+1523098623 c:\users\lucie\desktop\piscine\piscine_eco\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523098623 source:c:\users\lucie\desktop\piscine\piscine_eco\grman\coords.cpp
+	"coords.h"
+
+1523098623 source:c:\users\lucie\desktop\piscine\piscine_eco\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523098623 source:c:\users\lucie\desktop\piscine\piscine_eco\grman\widget.cpp
+	"widget.h"
+
+1523098623 source:c:\users\lucie\desktop\piscine\piscine_eco\main.cpp
+	"grman/grman.h"
+	<iostream>
+	<stdio.h>
+	"allegro.h"
+	"graph.h"
+	"Menu.h"
+
+1523098623 c:\users\lucie\desktop\piscine\piscine_eco\menu.h
+
+1523098623 source:c:\users\lucie\desktop\piscine\piscine_eco\menu.cpp
+	<allegro.h>
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"menu.h"
+
