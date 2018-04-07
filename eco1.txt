@@ -1,6 +1,6 @@
 12
 3
-0 0132 34 lionn.bmp
+0 0 132 34 lionn.bmp
 1 0 716 151 leopard1.bmp
 2 0 367 32 guepard1.bmp
 3 0 539 -3 hyene1.bmp
