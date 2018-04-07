@@ -306,10 +306,6 @@ void WidgetImage::draw()
 
 void WidgetBox::interact_focus()
 {
-    if ( getCopie() == true)
-        {
-            m_copie = false;
-        }
 
 
     if (mouse_click)
@@ -322,6 +318,11 @@ void WidgetBox::interact_focus()
         }
     }
 
+    if ( key[KEY_SPACE])
+    {
+        std::cout << "fjufeiuf" << std::endl;
+        m_suppArete = true;
+    }
 
         if( key[KEY_T])
         {
@@ -427,7 +428,5 @@ void WidgetEdge::draw()
     }
 
 }
-
-
 
 }

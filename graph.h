@@ -122,6 +122,7 @@ class VertexInterface
         // Le constructeur met en place les éléments de l'interface
         // voir l'implémentation dans le .cpp
         VertexInterface(int idx, int x, int y, std::string pic_name="", int pic_idx=0);
+
 };
 
 
@@ -147,6 +148,10 @@ class Vertex
         /// le POINTEUR sur l'interface associée, nullptr -> pas d'interface
         std::shared_ptr<VertexInterface> m_interface = nullptr;
 
+        ///Le rythme de croissance
+        double rythmeCroissance = 0.0001;
+
+
         // Docu shared_ptr : https://msdn.microsoft.com/fr-fr/library/hh279669.aspx
         // La ligne précédente est en gros équivalent à la ligne suivante :
         // VertexInterface * m_interface = nullptr;
@@ -160,6 +165,10 @@ class Vertex
             m_value(value), m_interface(interface)  {  }
 
         double getValue() {return m_value;}
+        double getRythmeCroissance( ){return rythmeCroissance; }
+        std::vector<int>  get_In( ){return m_in; }
+        std::vector<int>  get_Out( ){return m_out; }
+        void setPoids (double t){ m_value = t; }
 
         /// Vertex étant géré par Graph ce sera la méthode update de graph qui appellera
         /// le pre_update et post_update de Vertex (pas directement la boucle de jeu)
@@ -302,6 +311,11 @@ class Graph
         /// le POINTEUR sur l'interface associée, nullptr -> pas d'interface
         std::shared_ptr<GraphInterface> m_interface = nullptr;
 
+        ///matrice adjacence;
+        std::vector< std::vector <int> > m_matriceadjacence;
+
+
+
 
     public:
 
@@ -322,11 +336,15 @@ class Graph
         /// de chargement de fichiers par exemple.
         void ChargementFichier( std::string nomfichier);
         void Sauvegarde(std::string nom);
+        void SauvegardeMatrice(std::string nom);
+        void ChargementFichierMatrice( std::string nomfichier);
         void make_example(std::string a);
 
         void Suppression();
+        void SuppressionPar_Space();
         void test_remove_edge(int eidx);
         void Supp_Sommet_Arete(int idx);
+        void Dynamisme();
 
         /// La méthode update à appeler dans la boucle de jeu pour les graphes avec interface
         void update();

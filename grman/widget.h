@@ -367,6 +367,9 @@ class WidgetBox : public Widget
          bool m_fromPourAjout =false ;
          bool m_toPourAjout = false;
 
+         //Pour supp les arete par deux sommet;
+         bool m_suppArete = false;
+
         //pour la creation d'arete
         bool m_areteCrea = false;
 
@@ -379,11 +382,18 @@ class WidgetBox : public Widget
         virtual void interact_focus();
         virtual bool captures_focus() { return true; }
         void set_moveable(bool moveable=true) { m_moveable = moveable; }
+
         bool getCopie(){return m_copie;}
         bool getToAjout(){return m_toPourAjout;}
         bool getFromAjout(){return m_fromPourAjout;}
+        bool getSuppressionPar_click() {return m_suppArete;}
+
         void setToAjout( bool i){m_toPourAjout=i; }
         void setFromAjout( bool j){m_fromPourAjout=j; }
+        void setSuppArete( bool k){m_suppArete=k; }
+        void setCopie (bool a){m_copie =a; }
+
+
 };
 
 

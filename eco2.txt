@@ -1,20 +1,18 @@
-8
-10
-0 1.42857 94 13 orque1.bmp
-1 1.42857 274 13 phoque1.bmp
-2 1.42857 454 13 poisson_carnivore1.bmp
-3 3 224 13 poisson_herbivore1.bmp
-4 3 601 200 mollusque1.bmp
-5 25 666 89 oursin1.bmp
-6 25 170 354 loutre1.bmp
-7 25 544 554 algue1.bmp
+7
+9
+0 1.42857 140 227 orque1.bmp
+1 1.42857 197 25 phoque1.bmp
+3 3 420 37 poisson_herbivore1.bmp
+4 3 771 260 mollusque1.bmp
+5 25 691 57 oursin1.bmp
+6 25 229 396 loutre1.bmp
+7 25 533 449 algue1.bmp
 0 1 0 3
-1 2 1 50
 2 3 1 3
 3 3 6 4
 4 7 3 7
 5 7 5 4
 6 5 6 3
 7 7 4 3
-8 4 6 4
+8 4 6 84.375
 9 6 0 2

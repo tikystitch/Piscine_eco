@@ -186,7 +186,6 @@ void Graph::ChargementFichier( std::string nomfichier)
             add_interfaced_edge(sommet, entrant, sortant, poids);
         }
     }
-
 }
 
 void Graph::Sauvegarde(std::string nom)
@@ -220,6 +219,56 @@ void Graph::Sauvegarde(std::string nom)
             fichier << (it->second).getPoids() << std::endl;
         }
         fichier.close();
+    }
+
+}
+void Graph::ChargementFichierMatrice( std::string nomfichier)
+{
+    std::vector < int > Stock;
+    int nbsommet=0;
+    double a=0;
+
+    std::ifstream fichier(nomfichier, std::ios::in);
+    if (!fichier)
+    {
+        std::cout << "Erreur ! Le fichier n'est pas ouvert" << std::endl;
+    }
+    else
+    {
+        fichier >> nbsommet;
+        for( int i =0 ; i<nbsommet; ++i)
+        {
+            // Stock.push_back(vector<int>());
+            for (int j=0; j<nbsommet+1; ++j)
+            {
+                fichier >> a;
+                Stock.push_back(a);
+            }
+            m_matriceadjacence.push_back(Stock);
+            Stock.clear();
+        }
+    }
+}
+
+void Graph::SauvegardeMatrice(std::string nom)
+{
+    std::ofstream fichier(nom, std::ios::out | std::ios::trunc);
+    if (!fichier)
+    {
+        std::cout << "Erreur ! Le fichier n'est pas ouvert" << std::endl;
+    }
+    else
+    {
+
+        fichier << m_matriceadjacence.size() << std::endl;
+        for(unsigned int i=0; i<m_matriceadjacence.size(); ++i)
+        {
+            for(unsigned int j=0; j< (m_matriceadjacence).size()+1; ++j)
+            {
+                fichier << m_matriceadjacence[i][j] << ' ';
+            }
+            fichier << std::endl;
+        }
     }
 
 }
@@ -270,6 +319,7 @@ void Graph::make_example (std::string a)
 
 void Graph::Supp_Sommet_Arete(int idx)
 {
+    int test=0;
     /// référence vers le Edge à enlever
     Vertex &remed=m_vertices.at(idx);
 
@@ -302,12 +352,13 @@ void Graph::Supp_Sommet_Arete(int idx)
     }
 
     ///Supprime le sommet
+    if ( test =0)
     for (std::map<int,Vertex>::iterator it=m_vertices.begin(); it != m_vertices.end(); ++it)
     {
         if( it->first == idx)
         {
+            test = 1;
             m_vertices.erase(idx); ///Effacement par clé
-
         }
     }
 
@@ -345,10 +396,10 @@ void Graph::test_remove_edge(int eidx)
     m_edges.erase( eidx );
 
 
-    /// Tester la cohérence : nombre d'arc entrants et sortants des sommets 1 et 2
-    std::cout << m_vertices[remed.m_from].m_in.size() << " " << m_vertices[remed.m_from].m_out.size() << std::endl;
-    std::cout << m_vertices[remed.m_to].m_in.size() << " " << m_vertices[remed.m_to].m_out.size() << std::endl;
-    std::cout << m_edges.size() << std::endl;
+//    /// Tester la cohérence : nombre d'arc entrants et sortants des sommets 1 et 2
+//    std::cout << m_vertices[remed.m_from].m_in.size() << " " << m_vertices[remed.m_from].m_out.size() << std::endl;
+//    std::cout << m_vertices[remed.m_to].m_in.size() << " " << m_vertices[remed.m_to].m_out.size() << std::endl;
+//    std::cout << m_edges.size() << std::endl;
 
 }
 
@@ -358,8 +409,43 @@ void Graph::Suppression()
     {
         if ((it->second).m_interface->m_croix.getVerifSupp() == true)
         {
-            //test_remove_edge(it->first);
             Supp_Sommet_Arete(it->first);
+        }
+    }
+}
+
+
+void Graph::SuppressionPar_Space()
+{
+    for ( std::map<int,Vertex>::iterator it= m_vertices.begin(); it != m_vertices.end(); ++it)
+    {
+        if ((it->second).m_interface->m_top_box.getSuppressionPar_click() == true)
+        {
+            for ( std::map<int,Vertex>::iterator op= m_vertices.begin(); op != m_vertices.end(); ++op)
+            {
+                if(((op->second).m_interface->m_top_box.getSuppressionPar_click() == true) && op->first != it->first)
+                {
+                    for (std::map<int, Edge>::iterator ito= m_edges.begin(); ito != m_edges.end(); ++ito)
+                    {
+                        if ( (ito->second).getFrom() == it->first && (ito->second).getTo() == op->first)
+                        {
+                            test_remove_edge(ito->first);
+
+
+                            for(std::map<int, Vertex>::iterator boubou= m_vertices.begin(); boubou != m_vertices.end(); ++boubou )
+                            {
+                                (boubou->second).m_interface->m_top_box.setSuppArete(false);
+                                (boubou->second).m_interface->m_top_box.setSuppArete(false);
+                            }
+//                            (it->second).m_interface->m_top_box.setSuppArete(false);
+//                            (it->second).m_interface->m_top_box.setSuppArete(false);
+//                            (op->second).m_interface->m_top_box.setSuppArete(false);
+//                            (op->second).m_interface->m_top_box.setSuppArete(false);
+
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -373,8 +459,6 @@ void Graph::update()
 
     for (auto &elt : m_vertices)
         elt.second.pre_update();
-
-         ajouter_Arete();
 
     for (auto &elt : m_edges)
         elt.second.pre_update();
@@ -403,6 +487,8 @@ void Graph::add_interfaced_vertex(int idx, double value, int x, int y, std::stri
     m_interface->m_main_box.add_child(vi->m_top_box);
     // On peut ajouter directement des vertices dans la map avec la notation crochet :
     m_vertices[idx] = Vertex(value, vi);
+    std::cout << m_vertices[idx].getValue() << std::endl;
+    m_vertices[idx].setPoids(value);
 }
 
 /// Aide à l'ajout d'arcs interfacés
@@ -425,9 +511,9 @@ void Graph::add_interfaced_edge(int idx, int id_vert1, int id_vert2, double weig
     m_edges[idx] = Edge(weight, ei);
     m_edges[idx].m_from = id_vert1;
     m_edges[idx].m_to = id_vert2;
+
     m_vertices[id_vert1].m_out.push_back(idx);
     m_vertices[id_vert2].m_in.push_back(idx);
-
 }
 
 void Graph::ajouter_sommet()
@@ -454,12 +540,12 @@ void Graph::ajouter_sommet()
             }
         }
     }
-
     for (std::map<int,Vertex>::iterator it= m_vertices.begin(); it!= m_vertices.end(); ++it)
     {
         if ((it->second).m_interface->m_top_box.getCopie() == true)
         {
             add_interfaced_vertex(tempoPourMap[0]+1,  0.0, 400, 300, ((it->second).m_interface->m_img.getPicname()) );
+            (it->second).m_interface->m_top_box.setCopie(false);
         }
     }
 
@@ -476,8 +562,9 @@ void Graph::ajouter_Arete()
 {
     //std::map<int, Vertex>::iterator it;
     int temp;
+    int blindage=0;
     std::vector<int> tempoPourMap; ///Variable temporaire pour le tri
-
+    tempoPourMap.push_back(0);
     for ( std::map<int,Vertex>::iterator it= m_vertices.begin(); it != m_vertices.end(); ++it)
     {
         if ((it->second).m_interface->m_top_box.getFromAjout() == true)
@@ -486,10 +573,8 @@ void Graph::ajouter_Arete()
             {
                 if(((op->second).m_interface->m_top_box.getToAjout() == true) && op->first != it->first)
                 {
-
                     for (std::map<int, Edge>::iterator ito= m_edges.begin(); ito != m_edges.end(); ++ito)
                     {
-
                         tempoPourMap.push_back(ito->first);
                     }
                     for (unsigned int i=0; i<tempoPourMap.size(); ++i)
@@ -504,17 +589,104 @@ void Graph::ajouter_Arete()
                             }
                         }
                     }
-                    std::cout << "zrbhzgohnzr" <<std::endl;
-                    add_interfaced_edge(tempoPourMap[0]+1, it->first, op->first, 50.0);
-                    (it->second).m_interface->m_top_box.setFromAjout(false);
-                    (it->second).m_interface->m_top_box.setToAjout(false);
-                    (op->second).m_interface->m_top_box.setToAjout(false);
-                    (op->second).m_interface->m_top_box.setFromAjout(false);
+
+                    for (std::map<int, Edge>::iterator blind= m_edges.begin(); blind != m_edges.end(); ++blind )
+                    {
+                        if( (blind->second).getFrom() == it->first && (blind->second).getTo() == op->first )
+                        {
+                            blindage=1;
+                            std::cout << "From " << it->first << std::endl;
+                            std::cout << "To " << op->first << std::endl;
+                        }
+                    }
+                    if( blindage != 1)
+                    {
+                        add_interfaced_edge(tempoPourMap[0]+1, it->first, op->first, 50.0);
+                    }
+
+                    for(std::map<int, Vertex>::iterator boubou= m_vertices.begin(); boubou != m_vertices.end(); ++boubou)
+                    {
+                        (boubou->second).m_interface->m_top_box.setFromAjout(false);
+                        (boubou->second).m_interface->m_top_box.setToAjout(false);
+                    }
+                }
+            }
+            ///Pour assurer la bonne arete
+            (it->second).m_interface->m_top_box.setFromAjout(false);
+
+        }
+    }
+}
+
+
+void Graph::Dynamisme( )
+{
+    double t=0;
+    std::vector< double > Pred;
+    double P1=0;
+    std::vector< double > koul;
+    double K1=0;
+    //double k=0;
+    ///Attention slider donne la value et non le fichier !!!
+
+    for(std::map<int, Vertex>::iterator premier= m_vertices.begin(); premier != m_vertices.end(); ++premier)
+    {
+        for (std::map<int, Edge>::iterator deuxieme= m_edges.begin(); deuxieme != m_edges.end(); ++deuxieme )
+        {
+            for (unsigned int i=0; i < ((premier->second).get_Out().size()); ++i)
+            {
+                                                                ///Nous donne l'index du sommet sortant
+                if ( (deuxieme->second).getTo() == (premier->second).get_Out()[i] )
+                {
+                    for ( std::map<int, Vertex>::iterator findgetToValue= m_vertices.begin(); findgetToValue != m_vertices.end(); ++findgetToValue)
+                    {
+                        ///Permet de retrouver la valeur de l'index du sommet sortant. (deuxieme->second).getTo()
+                        if ( (premier->second).get_Out()[i] == (findgetToValue->first))
+                        {
+                            Pred.push_back((deuxieme->second).m_interface->m_slider_weight.get_value() * std::stoi((findgetToValue->second).m_interface->m_label_value.get_message()));
+                        }
+                    }
+                }
+            }
+
+            for (unsigned int j=0; j < ((premier->second).get_In().size()); ++j)
+            {
+                if ( (deuxieme->second).getFrom() == (premier->second).get_In()[j] )
+                {
+                    for ( std::map<int, Vertex>::iterator findgetToValue= m_vertices.begin(); findgetToValue != m_vertices.end(); ++findgetToValue)
+                    {
+                        if (premier->second.get_In()[j] == findgetToValue->first )
+                        {
+                            std::cout << "(findgetToValue->second).getValue() " << std::stoi((findgetToValue->second).m_interface->m_label_value.get_message()) << std::endl;
+                            //std::cout << (deuxieme->second).getTo() << std::endl;
+                           // k = (deuxieme->second).getPoids() * (findgetToValue->second).getValue();
+                           koul.push_back((deuxieme->second).m_interface->m_slider_weight.get_value() * std::stoi((findgetToValue->second).m_interface->m_label_value.get_message()));
+                        }
+                    }
                 }
             }
         }
+
+        for (unsigned int i=0; i< Pred.size();++i )
+        {
+            P1 = P1 +Pred[i];
+        }
+         for (unsigned int j=0; j< koul.size();++j )
+        {
+            K1 = K1 + koul[j];
+        }
+
+        t = ((premier->second).getValue()) + ((premier->second).getRythmeCroissance()*(premier->second).getValue())*( (1-(premier->second).getValue())/K1) - P1;
+        (premier->second).setPoids(t);
+
+        Pred.clear();
+        koul.clear();
+        P1 = 0;
+        K1 = 0;
+        std::cout << "T    " << t << std::endl;
+//        int a;
+//        std::cin >> a;
+
     }
-
 }
-
 
