@@ -690,3 +690,201 @@ void Graph::Dynamisme( )
     }
 }
 
+// Procédure qui recherche le plus court chemin depuis un sommet de référence  //  Paramètres :  //  adjacence : matrice d’adjacence du graphe //  ordre : nombre de sommets //  s : numéro de sommet de référence  // l : tableau dynamique alloué des longueurs minimales des sommets depuis s // pred : tableau dynamique alloué des prédécesseurs des sommets
+
+///Code BFS support de cours
+/*void  plusCourtChemin (int**adjacence, int ordre, int s, int *l, int *pred)
+{
+    // Variables locales
+    int *marques ; // tableau dynamique indiquant si les sommets sont marqués ou non int x, y ; // numéros de sommets intermédiaires
+    t_file *f ; // file d’attente de sommets
+
+// Allouer le tableau marques de taille « ordre »  …
+
+// Initialiser les marquages et les longueurs minimales à 0
+    for (x=0 ; x<ordre ; x++)
+    {
+        marques[x] = 0 ; l[x] = 0 ;
+    }
+
+// Marquer le sommet s à 1 marques[s] = 1 ;
+
+// Créer (allouer) la file f et enfiler s dans f ...
+
+    while (…)   // Tant que la file f n’est pas vide …     // Défiler le premier sommet x de la file f
+    {
+
+// Pour tous les sommets y adjacents à x et non marqués  for (y=0 ; y<ordre ; y++)
+        if (adjacence[x][y] && !marques[y])
+        {
+            marques[y] = 1 ;  // marquer le sommet y
+            // enfiler le sommet y dans f
+
+            pred[y] = x ; // x est le prédécesseur de y
+            l[y] = l[x]+1 ; // // incrémenter la longueur de y
+        }
+    }
+}
+
+void Graph::BFS(int startVertex)   //https://www.programiz.com/dsa/graph-bfs
+{
+    bool *visited;
+    visited = new bool[m_vertices.size()];
+    for(int i = 0; i < m_vertices.size(); i++)
+        visited[i] = false;
+
+//    list queue;
+
+    visited[m_vertices.begin()] = true;
+    queue.push_back(m_vertices.begin());
+
+    list::iterator i;
+
+    while(!queue.empty())
+    {
+        int currVertex = queue.front();
+        std::cout << "Visited " << currVertex << " ";
+        queue.pop_front();
+
+        for(int i = adjLists[currVertex].begin(); i != adjLists[currVertex].end(); ++i)
+        {
+            int adjVertex = *i;
+            if(!visited[adjVertex])
+            {
+
+                visited[adjVertex] = true;
+                queue.push_back(adjVertex);
+            }
+        }
+    }
+}
+
+void Graph::parcourtBFS()
+{
+    std::queue<int> file;
+    std::vector<int> pre; /// Tableau des predecesseurs
+    bool trouve;
+
+    //init
+    for(int i = 0; i < get_ordre(); i++)
+    {
+        pre.push_back(-1);
+    }
+
+    reset_marquages();
+
+    file.push(m_entree);
+
+    while(!file.empty() && trouve == false)
+    {
+        get_sommet(file.front()).set_marque(true);
+
+        for(auto const &elem : get_sommet(file.front()).get_adjacents())
+        {
+            if(get_sommet(elem).est_marque() == false)
+            {
+                file.push(elem);
+                pre[elem] = file.front();
+
+                if(elem == m_sortie)
+                {
+                    trouve = true;
+                }
+            }
+        }
+
+        file.pop();
+    }
+
+    reset_marquages();
+    marquerPre(pre);
+}
+
+// Fonction qui retourne un tableau dynamique de toutes les composantes fortement  // connexes du graphe //  Paramètres :  //  adjacence : matrice d’adjacence nœud-nœud du graphe //  ordre : nombre de sommets
+
+std::vector toutesLesComposantesFortementConnexes (int** adjacence, int nbsommet)
+{
+    // Variables locales
+    std::vector<int> compo_connexe; // vecteur des composantes fortement connexes à retourner
+    std::queue<int> connexite;  // Pile
+nbsommet = m_vertices.size();
+    std::vector<bool>marques ; // vecteur indiquant si les sommets sont marqués ou non int x, y ; // numéros de sommets intermédiaires comme indices des tableaux
+
+    for (int i=0; i<nbsommet; i++)
+    {
+        marques.push_back(0); // On marque tous les sommets a 0
+    }
+
+    connexite.push(nbsommet); // On rajoute à la pile le nb sommet
+    marques[nbsommet]=true; // On marque tous les sommets a true
+
+    while(!connexite.empty())
+    {
+        connexite.pop();
+    }
+// Pour tous les sommets x non marqués  // Rechercher la composante fortement connexe de x
+    for (x=0 ; x<nbsommet ; x++)
+    {
+        if (!marques[x])
+        {
+            tabconnexe[x] = uneComposanteFortementConnexe(adjacence, nbsommet, x) ;
+            marques[x] = 1 ;
+
+            for (y=0 ; y<nbsommet ; y++)
+                if (tabconnexe[x][y] && !marques[y])// Marquer chaque sommet x et marquer les sommets y connectés à x et non marqués
+                    marques[y] = 1 ;
+
+            return tabconnexe ;
+        }
+    }
+
+
+bool connexite(std::string nom_fichier)
+{
+    std::ifstream fichier(nom_fichier, std::ios::in);
+    int ordre;
+    fichier >> ordre;
+    int som=0;
+    int verif=0;
+    std::vector<bool> connexe;
+    std::stack<int> pile;
+    pile.push(som);
+
+    for(int i=0; i<ordre; i++)
+        connexe.push_back(false);
+
+
+    int matrice_adj[ordre][ordre];
+    for(int i=0; i<ordre; i++)
+    {
+        for(int j=0; j<ordre; j++)
+            fichier >> matrice_adj[i][j];
+    }
+
+    while(!pile.empty())
+   {
+        som=pile.top();
+        pile.pop();
+        connexe[som]=true;
+        for(int i=0; i<ordre; i++)
+       {
+            if(matrice_adj[som][i]==1 && connexe[i]==false)
+            {
+                    pile.push(i);
+                    connexe[i]=true;
+            }
+       }
+   }
+    for(int i=0; i<connexe.size(); i++)
+   {
+       if(connexe[i]==false)
+            verif++;
+   }
+   if(verif!=0)
+        return false;
+    else
+        return true;
+
+
+}*/
+
