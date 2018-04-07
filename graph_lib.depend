@@ -471,3 +471,279 @@
 	"graph.h"
 	<map>
 
+1522861834 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1522861834 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1522948257 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522861835 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522861835 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1523020130 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523020130 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1522861834 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	<stdio.h>
+	"allegro.h"
+	"graph.h"
+	"Menu.h"
+
+1523007055 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\graph.h
+	<fstream>
+	<iostream>
+	<vector>
+	<map>
+	<string>
+	<memory>
+	"grman/grman.h"
+
+1522861834 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\menu.h
+
+1523011256 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\menu.cpp
+	<allegro.h>
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"menu.h"
+
+1523020130 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (3)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+	<map>
+
+1523039697 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+	<map>
+
+1523037854 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\graph.h
+	<fstream>
+	<iostream>
+	<vector>
+	<map>
+	<string>
+	<memory>
+	"grman/grman.h"
+
+1522861835 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522861835 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1522861834 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1523020130 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1522861834 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1522948257 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523023796 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1522861834 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	<stdio.h>
+	"allegro.h"
+	"graph.h"
+	"Menu.h"
+
+1522861834 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\menu.h
+
+1523039278 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue (4)\trophic networks (menu, sauv et charg)\graph_lib_exemple_graph\menu.cpp
+	<allegro.h>
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"menu.h"
+
+1522861836 source:c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1522861836 c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1522948258 source:c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522861836 c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522861836 c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1523020132 c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523023798 source:c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1522861836 source:c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	<stdio.h>
+	"allegro.h"
+	"graph.h"
+	"Menu.h"
+
+1523037856 c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\graph.h
+	<fstream>
+	<iostream>
+	<vector>
+	<map>
+	<string>
+	<memory>
+	"grman/grman.h"
+
+1522861836 c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\menu.h
+
+1523039280 source:c:\users\mahi_\documents\prepa 2\jimmy\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\menu.cpp
+	<allegro.h>
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"menu.h"
+
+1522861836 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\coords.cpp
+	"coords.h"
+
+1522861836 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\coords.h
+	<cmath>
+
+1523060608 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522861836 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522861836 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\grman_couleurs.h
+
+1523020132 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523023798 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\grman\widget.cpp
+	"widget.h"
+
+1523057404 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\main.cpp
+	"grman/grman.h"
+	<iostream>
+	<stdio.h>
+	"allegro.h"
+	"graph.h"
+	"Menu.h"
+
+1523057404 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\graph.h
+	<fstream>
+	<iostream>
+	<vector>
+	<map>
+	<string>
+	<memory>
+	"grman/grman.h"
+
+1523057404 c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\menu.h
+
+1523063875 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\menu.cpp
+	<allegro.h>
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"menu.h"
+
+1523063320 source:c:\users\vuong\desktop\infomatique\piscine\trophic networks (menu, sauv,charg et suppression et ajout s (clk droit) a (espace) retour menue click + matrice\trophic networks\trophic networks\trophic networks\graph_lib_exemple_graph\graph.cpp
+	"graph.h"
+	<map>
+

@@ -1,17 +1,14 @@
 11
-4
-0 1.42857 184 54 lionn.bmp
-1 1.42857 295 176 leopard1.bmp
-2 1.42857 418 43 guepard1.bmp
-3 1.42857 569 10 hyene1.bmp
-4 3 141 197 buffle1.bmp
-7 3 646 215 zebre1.bmp
-8 1.42857 738 210 gazelle1.bmp
-9 62.8571 425 278 babouin1.bmp
-10 25.7143 248 323 hippotame1.bmp
-11 0 498 439 leopard1.bmp
-13 0 685 391 leopard1.bmp
-0 4 0 3
-3 7 0 8
-4 8 0 7
-6 8 3 3
+1
+0 0 128 0 lionn.bmp
+1 0 722 145 leopard1.bmp
+2 0 309 -10 guepard1.bmp
+3 0 521 -1 hyene1.bmp
+4 0 178 315 buffle1.bmp
+7 0 197 151 zebre1.bmp
+8 0 710 -7 gazelle1.bmp
+10 0 564 411 hippotame1.bmp
+11 0 447 139 leopard1.bmp
+13 0 674 289 leopard1.bmp
+14 0 533 277 babouin1.bmp
+1 7 11 50
