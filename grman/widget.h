@@ -390,7 +390,8 @@ class WidgetBox : public Widget
 
         void setToAjout( bool i){m_toPourAjout=i; }
         void setFromAjout( bool j){m_fromPourAjout=j; }
-         void setSuppArete( bool k){m_suppArete=k; }
+        void setSuppArete( bool k){m_suppArete=k; }
+        void setCopie (bool a){m_copie =a; }
 
 
 };

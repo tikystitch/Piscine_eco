@@ -306,10 +306,6 @@ void WidgetImage::draw()
 
 void WidgetBox::interact_focus()
 {
-    if ( getCopie() == true)
-        {
-            m_copie = false;
-        }
 
 
     if (mouse_click)

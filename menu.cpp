@@ -35,16 +35,14 @@ void lancerToutAllegro(int largeur, int hauteur)
     show_mouse(screen); // Affiche pointeur de souris en mode allegro
 }
 
-void graphe( std::string nom, int *quitter)
+void graphe( std::string nom, int *quitter, std::string matrice)
 {
-    // On affiche la map principale
-    /// A appeler en 1er avant d'instancier des objets graphiques etc...
-
     /// Le nom du répertoire où se trouvent les images à charger
     grman::set_pictures_path("pics");
 
     /// Un exemple de graphe
     Graph g;
+    g.ChargementFichierMatrice(matrice);
     g.make_example(nom);
 
     /// Vous gardez la main sur la "boucle de jeu"
@@ -55,19 +53,23 @@ void graphe( std::string nom, int *quitter)
         /// Il faut appeler les méthodes d'update des objets qui comportent des widgets
         g.update();
         g.ajouter_sommet();
+        g.ajouter_Arete();
         g.Suppression();
         g.SuppressionPar_Space();
+        //g.Dynamisme();
 
         /// Mise à jour générale (clavier/souris/buffer etc...)
         grman::mettre_a_jour();
         *quitter = 0;
     }
+    g.SauvegardeMatrice(matrice);
     ///Mettre le changement de graphe ici.
     g.Sauvegarde(nom);
 }
 void menu()
 {
-    std::string savane, marine, banquise;
+    std::string savane, marine, banquise, matrice1, matrice2, matrice3;
+
     int quitter = 0;
     BITMAP*page;
     BITMAP*fond_menu;
@@ -76,11 +78,7 @@ void menu()
     // Initialisation d'allegro avec en paramètre la taille de la bitmap
     grman::init();  //On initialise qu'une seule fois pour avoir qu'une seule fenetre
 
-    do
-    {
         page=create_bitmap(SCREEN_W, SCREEN_H);
-        clear_bitmap(page);
-
 
         // Chargement des différentes map
         fond_menu=load_bitmap("accueil.bmp", NULL);
@@ -91,6 +89,11 @@ void menu()
             exit(EXIT_FAILURE);
         }
         // On efface et on applique le fond
+
+    do
+    {
+        clear_bitmap(page);
+
         blit(fond_menu, page,0,0,0,0, SCREEN_W, SCREEN_H);
         textprintf_ex(page,font,50,0,makecol(255, 255, 255),-1,"T R O P H I C  N E T W O R K S");
         textprintf_ex(page,font,300,180,makecol(255, 255, 255),-1,"*** *** M E N U *** ***");
@@ -112,30 +115,31 @@ void menu()
             exit(EXIT_SUCCESS);
         }
 
-        if(key[KEY_1])
+        if(mouse_b&1 && mouse_x > 215 && mouse_x < 590 && mouse_y > 210 && mouse_y < 240 )
         {
            // std::cout << "slfjbozef";
             savane="eco1.txt";
+            matrice1 = "matrice.txt";
             clear_bitmap(page);
-             graphe(savane, &quitter);
+            graphe(savane, &quitter, matrice1);
         }
 
-        if(key[KEY_2])
+        if(mouse_b&1 && mouse_x > 215 && mouse_x < 590 && mouse_y > 250 && mouse_y < 290 )
         {
 
 
             marine="eco2.txt";
             clear_bitmap(page);
-            graphe( marine, &quitter);
+            graphe( marine, &quitter, matrice2);
         }
 
 
 
-        if(key[KEY_3])
+        if(mouse_b&1 && mouse_x > 215 && mouse_x < 590 && mouse_y > 305 && mouse_y < 340 )
         {
             banquise="eco3.txt";
             clear_bitmap(page);
-            graphe( banquise, &quitter);
+            graphe( banquise, &quitter, matrice3);
         }
 
         if(key[KEY_4])
