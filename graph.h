@@ -337,8 +337,6 @@ class Graph
         /// de chargement de fichiers par exemple.
         void ChargementFichier( std::string nomfichier);
         void Sauvegarde(std::string nom);
-        void SauvegardeMatrice(std::string nom);
-        void ChargementFichierMatrice( std::string nomfichier);
         void make_example(std::string a);
 
         void Suppression();

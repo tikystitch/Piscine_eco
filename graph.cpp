@@ -230,66 +230,6 @@ void Graph::Sauvegarde(std::string nom)
     }
 
 }
-void Graph::ChargementFichierMatrice( std::string nomfichier)
-{
-    std::vector < int > Stock; //stock le nombre de sommet
-    int nbsommet=0;
-    double a=0;
-
-    std::ifstream fichier(nomfichier, std::ios::in);
-    if (!fichier)
-    {
-        std::cout << "Erreur ! Le fichier n'est pas ouvert" << std::endl;
-    }
-    else
-    {
-        fichier >> nbsommet;
-        for( int i =0 ; i<nbsommet; ++i)
-        {
-            // Stock.push_back(vector<int>());
-            for (int j=0; j<nbsommet+1; ++j) //pas de matrice carree
-            {
-                fichier >> a;
-                Stock.push_back(a);
-            }
-            m_matriceadjacence.push_back(Stock);
-            Stock.clear(); //reinitialise
-        }
-    }
-        for (unsigned int i =0; i<m_matriceadjacence.size(); ++i )
-    {
-        for ( unsigned int j = 0; j< m_matriceadjacence.size(); ++j)
-        {
-            std::cout << m_matriceadjacence[i][j] << ' ';
-        }
-        std::cout << std::endl;
-    }
-
-}
-
-void Graph::SauvegardeMatrice(std::string nom)
-{
-    std::ofstream fichier(nom, std::ios::out | std::ios::trunc);
-    if (!fichier)
-    {
-        std::cout << "Erreur ! Le fichier n'est pas ouvert" << std::endl;
-    }
-    else
-    {
-
-        fichier << m_matriceadjacence.size() << std::endl;
-        for(unsigned int i=0; i<m_matriceadjacence.size(); ++i)
-        {
-            for(unsigned int j=0; j< (m_matriceadjacence).size()+1; ++j)
-            {
-                fichier << m_matriceadjacence[i][j] << ' ';
-            }
-            fichier << std::endl;
-        }
-    }
-
-}
-
 
 /// Méthode spéciale qui construit un graphe arbitraire (démo)
 /// Cette méthode est à enlever et remplacer par un système
