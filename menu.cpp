@@ -60,6 +60,7 @@ void graphe( std::string nom, int *quitter, std::string matrice)
         g.ajouter_Arete();
         g.Suppression();
         g.SuppressionPar_Space();
+
         if ( key[KEY_ENTER] )
         {
             g.Dynamisme();
@@ -70,7 +71,15 @@ void graphe( std::string nom, int *quitter, std::string matrice)
         grman::mettre_a_jour();
         *quitter = 0;
     }
-     g.Sauvegarde(nom);
+    if(g.connexite("eco1.txt")==true)
+    {
+        std::cout << "Vous avez une connexite " << std::endl;
+    }
+    else
+    {
+        std::cout << "Vous n'avez pas de connexite" << std::endl;
+    }
+    g.Sauvegarde(nom);
     g.SauvegardeMatrice(matrice);
     ///Mettre le changement de graphe ici.
     //g.Sauvegarde(nom);
@@ -84,20 +93,21 @@ void menu()
     BITMAP*fond_menu;
 
 
+
     // Initialisation d'allegro avec en paramètre la taille de la bitmap
     grman::init();  //On initialise qu'une seule fois pour avoir qu'une seule fenetre
 
-        page=create_bitmap(SCREEN_W, SCREEN_H);
+    page=create_bitmap(SCREEN_W, SCREEN_H);
 
-        // Chargement des différentes map
-        fond_menu=load_bitmap("accueil.bmp", NULL);
-        if (!fond_menu)
-        {
-            allegro_message("pas pu trouver/charger mon_image.bmp");
-            allegro_exit();
-            exit(EXIT_FAILURE);
-        }
-        // On efface et on applique le fond
+    // Chargement des différentes map
+    fond_menu=load_bitmap("accueil.bmp", NULL);
+    if (!fond_menu)
+    {
+        allegro_message("pas pu trouver/charger mon_image.bmp");
+        allegro_exit();
+        exit(EXIT_FAILURE);
+    }
+    // On efface et on applique le fond
 
     do
     {
@@ -126,21 +136,12 @@ void menu()
 
         if(mouse_b&1 && mouse_x > 215 && mouse_x < 590 && mouse_y > 210 && mouse_y < 240 )
         {
-           // std::cout << "slfjbozef";
+            // std::cout << "slfjbozef";
             savane="eco1.txt";
             matrice1 = "matrice.txt";
             clear_bitmap(page);
             graphe(savane, &quitter, matrice1);
 
-
-            if(connexite("eco1.txt")==true)
-            {
-                std::cout << "vous avez une connexite " << std::endl;
-            }
-            else
-                {
-                std::cout << "vous n'avez pas de connexite" << std::endl;
-                }
         }
 
         if(mouse_b&1 && mouse_x > 215 && mouse_x < 590 && mouse_y > 250 && mouse_y < 290 )

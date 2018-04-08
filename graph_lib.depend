@@ -817,13 +817,13 @@
 	"graph.h"
 	"menu.h"
 
-1523115636 source:c:\users\lucie\desktop\piscine\piscine_eco\graph.cpp
+1523182951 source:c:\users\lucie\desktop\piscine\piscine_eco\graph.cpp
 	"graph.h"
 	<map>
 	<string>
 	<stack>
 
-1523115730 c:\users\lucie\desktop\piscine\piscine_eco\graph.h
+1523182951 c:\users\lucie\desktop\piscine\piscine_eco\graph.h
 	<fstream>
 	<iostream>
 	<vector>
@@ -869,7 +869,7 @@
 	<loadpng.h>
 	<jpgalleg.h>
 
-1523114921 source:c:\users\lucie\desktop\piscine\piscine_eco\grman\widget.cpp
+1523182951 source:c:\users\lucie\desktop\piscine\piscine_eco\grman\widget.cpp
 	"widget.h"
 
 1523114921 source:c:\users\lucie\desktop\piscine\piscine_eco\main.cpp
@@ -882,10 +882,12 @@
 
 1523114896 c:\users\lucie\desktop\piscine\piscine_eco\menu.h
 
-1523114921 source:c:\users\lucie\desktop\piscine\piscine_eco\menu.cpp
+1523184499 source:c:\users\lucie\desktop\piscine\piscine_eco\menu.cpp
 	<allegro.h>
 	<stdio.h>
 	<stdlib.h>
+	<string>
+	<stack>
 	"graph.h"
 	"menu.h"
 
