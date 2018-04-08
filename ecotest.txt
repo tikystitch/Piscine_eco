@@ -1,0 +1,5 @@
+2
+1
+0 0 728 202 clown1.jpg
+1 100 97 212 bad_clowns_xx3xx.jpg
+0 0 1 50
