@@ -131,7 +131,7 @@ void Edge::post_update()
         return;
 
     /// Reprendre la valeur du slider dans la donnée m_weight locale
-    m_weight = m_interface->m_slider_weight.get_value();
+    m_weight = m_interface->m_slider_weight.get_value(); // recupere la valeur du slider
 
 
 
@@ -179,6 +179,7 @@ void Graph::ChargementFichier( std::string nomfichier)
     else
     {
         fichier >> nbsommet;
+        m_nbSommet = nbsommet;
         fichier >> nbArete;
         for( int i =0 ; i<nbsommet; ++i)
         {
@@ -231,7 +232,7 @@ void Graph::Sauvegarde(std::string nom)
 }
 void Graph::ChargementFichierMatrice( std::string nomfichier)
 {
-    std::vector < int > Stock;
+    std::vector < int > Stock; //stock le nombre de sommet
     int nbsommet=0;
     double a=0;
 
@@ -246,13 +247,13 @@ void Graph::ChargementFichierMatrice( std::string nomfichier)
         for( int i =0 ; i<nbsommet; ++i)
         {
             // Stock.push_back(vector<int>());
-            for (int j=0; j<nbsommet+1; ++j)
+            for (int j=0; j<nbsommet+1; ++j) //pas de matrice carree
             {
                 fichier >> a;
                 Stock.push_back(a);
             }
             m_matriceadjacence.push_back(Stock);
-            Stock.clear();
+            Stock.clear(); //reinitialise
         }
     }
         for (unsigned int i =0; i<m_matriceadjacence.size(); ++i )
@@ -263,6 +264,7 @@ void Graph::ChargementFichierMatrice( std::string nomfichier)
         }
         std::cout << std::endl;
     }
+
 }
 
 void Graph::SauvegardeMatrice(std::string nom)
@@ -368,7 +370,7 @@ void Graph::Supp_Sommet_Arete(int idx)
 
     for (unsigned int i = 0; i<m_matriceadjacence.size(); ++i)
     {
-        if ( m_matriceadjacence[i][0] == idx)
+        if ( m_matriceadjacence[i][0] == idx) //index = ligne de la matrice
         {
             m_matriceadjacence.erase(m_matriceadjacence.begin()+i);
         }
@@ -384,7 +386,6 @@ void Graph::Supp_Sommet_Arete(int idx)
             m_vertices.erase(idx); ///Effacement par clé
         }
     }
-
 }
 
 /// eidx index of edge to remove
@@ -462,25 +463,25 @@ void Graph::Suppression()
 
 void Graph::SuppressionPar_Space()
 {
-    for ( std::map<int,Vertex>::iterator it= m_vertices.begin(); it != m_vertices.end(); ++it)
+    for ( std::map<int,Vertex>::iterator it= m_vertices.begin(); it != m_vertices.end(); ++it) //regarde tous les sommets
     {
-        if((it->second).m_interface->m_top_box.getSuppressionPar_click() == true)
+        if((it->second).m_interface->m_top_box.getSuppressionPar_click() == true) //si la variable suppression de 'interface du sommet = true
         {
-            for ( std::map<int,Vertex>::iterator op= m_vertices.begin(); op != m_vertices.end(); ++op)
+            for ( std::map<int,Vertex>::iterator op= m_vertices.begin(); op != m_vertices.end(); ++op) //je regarde tous les vecteurs de sommets
             {
                 if(((op->second).m_interface->m_top_box.getSuppressionPar_click() == true) && op->first != it->first)
                 {
-                    for (std::map<int, Edge>::iterator ito= m_edges.begin(); ito != m_edges.end(); ++ito)
+                    for (std::map<int, Edge>::iterator ito= m_edges.begin(); ito != m_edges.end(); ++ito) //parcours les aretes pour voir laquelle est adjacente à celle la
                     {
-                        if ( (ito->second).getFrom() == it->first && (ito->second).getTo() == op->first)
+                        if ( (ito->second).getFrom() == it->first && (ito->second).getTo() == op->first) //si on en trouve une on le supprime
                         {
                             test_remove_edge(ito->first);
 
 
                             for(std::map<int, Vertex>::iterator boubou= m_vertices.begin(); boubou != m_vertices.end(); ++boubou )
                             {
-                                (boubou->second).m_interface->m_top_box.setSuppArete(false);
-                                (boubou->second).m_interface->m_top_box.setSuppArete(false);
+                                (boubou->second).m_interface->m_top_box.setSuppArete(false); //reset tous les sommets pour leur variable de l interface qui soit egale a faux
+                                (boubou->second).m_interface->m_top_box.setSuppArete(false); //evite de garder en memoire
                             }
                         }
                     }
@@ -526,19 +527,19 @@ void Graph::update()
 //    }
 
 ///Pour actualiser la matrice d'adjacence avec les valeurs des edges
-     for (std::map<int, Edge>::iterator it= m_edges.begin(); it != m_edges.end(); ++it)
+     for (std::map<int, Edge>::iterator it= m_edges.begin(); it != m_edges.end(); ++it) //parcourt toutes les aretes
     {
         for ( unsigned int i =0; i< m_matriceadjacence.size(); ++i)
         {
             ///id_vert1
-            if ( m_matriceadjacence[i][0] == (it->second).getFrom() )
+            if ( m_matriceadjacence[i][0] == (it->second).getFrom() ) // localiser le point de depart de l'arete dans la matrice d'adjacence
             {
                 for (unsigned int j =0; j < m_matriceadjacence.size(); ++j )
                 {
                     ///id_vert2
-                    if ( m_matriceadjacence[j][0] == (it->second).getTo())
+                    if ( m_matriceadjacence[j][0] == (it->second).getTo()) // localiser le point d arrivée de l'arete dans la matrice d'adjacence
                     {
-                        m_matriceadjacence[i][j+1] = (it->second).getPoids() ;
+                        m_matriceadjacence[i][j+1] = (it->second).getPoids() ; //affecte le poid pour la matrice adjacence pondéré
                         m_matriceadjacence[j][i+1] = (it->second).getPoids() ;
                     }
                 }
@@ -566,13 +567,13 @@ void Graph::add_interfaced_vertex(int idx, double value, int x, int y, std::stri
     m_vertices[idx].setPoids(value);
 
     ///Variable pour remplir la matrice d'adjacence / ajouter le sommet dans la matrice
-    stock.push_back(idx);
+    stock.push_back(idx); //remplir case 0 en la stockant
 
-    for (unsigned int i =1; i<m_matriceadjacence.size(); ++i)
+    for (unsigned int i =1; i<m_nbSommet; ++i)
     {
-        stock.push_back(0);
+        stock.push_back(0); //on va remplir la ligne de 0
     }
-    m_matriceadjacence.push_back(stock);
+    m_matriceadjacence.push_back(stock); //ajouter une nouvelle ligne dans la matrice
     stock.clear();
 
 }
@@ -604,13 +605,13 @@ void Graph::add_interfaced_edge(int idx, int id_vert1, int id_vert2, double weig
     ///Pour compléter la matrice d'adjacence. On la remplit avec les poids des arete
     for ( unsigned int i =0; i< m_matriceadjacence.size(); ++i)
     {
-    if ( m_matriceadjacence[i][0] == id_vert1 )
+    if ( m_matriceadjacence[i][0] == id_vert1 ) //localiser le sommet de depart
     {
          for (unsigned int j =0; j < m_matriceadjacence.size(); ++j )
          {
-             if ( m_matriceadjacence[j][0] == id_vert2 )
+             if ( m_matriceadjacence[j][0] == id_vert2 ) //localiser le sommet de arrivee
              {
-                 m_matriceadjacence[i][j+1] = weight;
+                 m_matriceadjacence[i][j+1] = weight; //affecter le poids
                  m_matriceadjacence[j][i+1] = weight;
              }
          }
@@ -630,7 +631,7 @@ void Graph::ajouter_sommet()
     for (std::map<int, Vertex>::iterator it= m_vertices.begin(); it != m_vertices.end(); ++it)
         tempoPourMap.push_back(it->first);
 
-    for (unsigned int i=0; i<tempoPourMap.size(); ++i)
+    for (unsigned int i=0; i<tempoPourMap.size(); ++i) //utilisation du tri pour ne pas reutiliser les mm indices qu'au depart
     {
         for (unsigned int j=0; j<tempoPourMap.size(); ++j)
         {
@@ -646,8 +647,13 @@ void Graph::ajouter_sommet()
     {
         if ((it->second).m_interface->m_top_box.getCopie() == true)
         {
+            for( unsigned int i=0; i<m_matriceadjacence.size();  ++i)
+            {
+                m_matriceadjacence[i].push_back(0);
+            }
+            m_nbSommet = m_nbSommet + 1;
             add_interfaced_vertex(tempoPourMap[0]+1,  0.0, 400, 300, ((it->second).m_interface->m_img.getPicname()) );
-            (it->second).m_interface->m_top_box.setCopie(false);
+            (it->second).m_interface->m_top_box.setCopie(false); //on le copie pour ne pas avoir des duplications
         }
     }
 
@@ -669,17 +675,17 @@ void Graph::ajouter_Arete()
     tempoPourMap.push_back(0);
     for ( std::map<int,Vertex>::iterator it= m_vertices.begin(); it != m_vertices.end(); ++it)
     {
-        if ((it->second).m_interface->m_top_box.getFromAjout() == true)
+        if ((it->second).m_interface->m_top_box.getFromAjout() == true) // si la variable de l'ajout de sommet de depart de 'interface du sommet est egale a true
         {
             for ( std::map<int,Vertex>::iterator op= m_vertices.begin(); op != m_vertices.end(); ++op)
             {
-                if(((op->second).m_interface->m_top_box.getToAjout() == true) && op->first != it->first)
+                if(((op->second).m_interface->m_top_box.getToAjout() == true) && op->first != it->first) // si la variable de l'ajout de sommet d arrivee de 'interface du sommet est egale a true
                 {
                     for (std::map<int, Edge>::iterator ito= m_edges.begin(); ito != m_edges.end(); ++ito)
                     {
                         tempoPourMap.push_back(ito->first);
                     }
-                    for (unsigned int i=0; i<tempoPourMap.size(); ++i)
+                    for (unsigned int i=0; i<tempoPourMap.size(); ++i) //pour eviter d'ajouter la meme arete on effectue un tri
                     {
                         for (unsigned int j=0; j<tempoPourMap.size(); ++j)
                         {
@@ -691,7 +697,7 @@ void Graph::ajouter_Arete()
                             }
                         }
                     }
-
+            // evite d'avoir plusieurs aretes dans le meme sens avec les meme sommets
                     for (std::map<int, Edge>::iterator blind= m_edges.begin(); blind != m_edges.end(); ++blind )
                     {
                         if( (blind->second).getFrom() == it->first && (blind->second).getTo() == op->first )
@@ -709,6 +715,7 @@ void Graph::ajouter_Arete()
                     for(std::map<int, Vertex>::iterator boubou= m_vertices.begin(); boubou != m_vertices.end(); ++boubou)
                     {
                         (boubou->second).m_interface->m_top_box.setFromAjout(false);
+
                         (boubou->second).m_interface->m_top_box.setToAjout(false);
                     }
                 }

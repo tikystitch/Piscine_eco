@@ -42,7 +42,7 @@ void graphe( std::string nom, int *quitter, std::string matrice)
 
     /// Un exemple de graphe
     Graph g;
-    g.ChargementFichierMatrice(matrice);
+    //g.ChargementFichierMatrice(matrice);
     g.make_example(nom);
 
     /// Vous gardez la main sur la "boucle de jeu"
@@ -71,7 +71,7 @@ void graphe( std::string nom, int *quitter, std::string matrice)
         *quitter = 0;
     }
      g.Sauvegarde(nom);
-    g.SauvegardeMatrice(matrice);
+   // g.SauvegardeMatrice(matrice);
     ///Mettre le changement de graphe ici.
 }
 void menu()

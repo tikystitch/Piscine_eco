@@ -201,10 +201,10 @@ void WidgetCheckBox::draw()
 void WidgetCheckBox::interact_focus()
 {
     if ( mouse_click )
-       {
-         m_value = !m_value;
+    {
+        m_value = !m_value;
         m_VerifSupp = true;
-       }
+    }
 
 }
 
@@ -320,19 +320,18 @@ void WidgetBox::interact_focus()
 
     if ( key[KEY_SPACE])
     {
-        std::cout << "fjufeiuf" << std::endl;
         m_suppArete = true;
     }
 
-        if( key[KEY_T])
-        {
-            m_toPourAjout = true;
-        }
+    if( key[KEY_T])
+    {
+        m_toPourAjout = true;
+    }
 
-        if( key[KEY_F])
-        {
-            m_fromPourAjout = true;
-        }
+    if( key[KEY_F])
+    {
+        m_fromPourAjout = true;
+    }
 
     if (m_moveable)
     {
@@ -371,7 +370,8 @@ void WidgetEdge::draw()
     if ( !(m_attach[0] && m_attach[1] ) )
         return;
 
-    Coords p[2] {
+    Coords p[2]
+    {
         m_attach[0]->get_center_abs_pos(),
         m_attach[1]->get_center_abs_pos()
     };

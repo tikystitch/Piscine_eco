@@ -314,7 +314,8 @@ class Graph
         ///matrice adjacence;
         std::vector< std::vector <int> > m_matriceadjacence;
 
-
+        ///nombre de sommet;
+        int m_nbSommet;
 
 
     public:

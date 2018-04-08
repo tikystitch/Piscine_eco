@@ -817,3 +817,139 @@
 	"graph.h"
 	"menu.h"
 
+1522861836 source:c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\grman\coords.cpp
+	"coords.h"
+
+1522861836 c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\grman\coords.h
+	<cmath>
+
+1523060610 source:c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1522861836 c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1522861836 c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\grman\grman_couleurs.h
+
+1523020132 c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523023798 source:c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\grman\widget.cpp
+	"widget.h"
+
+1523103646 source:c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\main.cpp
+	"grman/grman.h"
+	<iostream>
+	<stdio.h>
+	"allegro.h"
+	"graph.h"
+	"Menu.h"
+
+1523140862 c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\graph.h
+	<fstream>
+	<iostream>
+	<vector>
+	<map>
+	<string>
+	<memory>
+	"grman/grman.h"
+
+1523057406 c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\menu.h
+
+1523140898 source:c:\users\mahi_\documents\prepa 2\projet5\matrice adj attention pas bon\trophic networks\menu.cpp
+	<allegro.h>
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"menu.h"
+
+1523150292 source:c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\grman\coords.cpp
+	"coords.h"
+
+1523150292 c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\grman\coords.h
+	<cmath>
+
+1523150292 source:c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\grman\grman.cpp
+	<cmath>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	<string>
+	<iostream>
+	<regex>
+	"grman.h"
+	<allegro.h>
+	<png.h>
+	<loadpng.h>
+	<jpgalleg.h>
+
+1523150292 c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\grman\grman.h
+	<allegro.h>
+	<string>
+	"grman_couleurs.h"
+	"coords.h"
+	"widget.h"
+
+1523150292 c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\grman\grman_couleurs.h
+
+1523150292 c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\grman\widget.h
+	"grman.h"
+	<iostream>
+	<string>
+	<vector>
+	<algorithm>
+	<allegro.h>
+
+1523152104 source:c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\grman\widget.cpp
+	"widget.h"
+
+1523150291 source:c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\main.cpp
+	"grman/grman.h"
+	<iostream>
+	<stdio.h>
+	"allegro.h"
+	"graph.h"
+	"Menu.h"
+
+1523151257 c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\graph.h
+	<fstream>
+	<iostream>
+	<vector>
+	<map>
+	<string>
+	<memory>
+	"grman/grman.h"
+
+1523150291 c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\menu.h
+
+1523151333 source:c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\menu.cpp
+	<allegro.h>
+	<stdio.h>
+	<stdlib.h>
+	"graph.h"
+	"menu.h"
+
+1523152001 source:c:\users\vuong\desktop\infomatique\piscine\matrice adj attention pas bon (version commenté)\matrice adj attention pas bon\trophic networks\graph.cpp
+	"graph.h"
+	<map>
+
