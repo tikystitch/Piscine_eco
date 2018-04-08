@@ -71,7 +71,7 @@ void graphe( std::string nom, int *quitter, std::string matrice)
         grman::mettre_a_jour();
         *quitter = 0;
     }
-    if(g.connexite("eco1.txt")==true)
+    if(g.connexite()==true)
     {
         std::cout << "Vous avez une connexite " << std::endl;
     }
@@ -79,10 +79,11 @@ void graphe( std::string nom, int *quitter, std::string matrice)
     {
         std::cout << "Vous n'avez pas de connexite" << std::endl;
     }
+    g.dynamisme();
     g.Sauvegarde(nom);
     g.SauvegardeMatrice(matrice);
     ///Mettre le changement de graphe ici.
-    //g.Sauvegarde(nom);
+
 }
 void menu()
 {

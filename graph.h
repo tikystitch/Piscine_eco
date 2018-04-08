@@ -353,7 +353,8 @@ class Graph
         void ajouter_sommet();
         void ajouter_Arete();
 
-        bool connexite(std::string nom_fichier);
+        bool connexite();
+        void dynamisme();
 };
 
 

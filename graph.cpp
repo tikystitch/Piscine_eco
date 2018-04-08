@@ -842,52 +842,71 @@ nbsommet = m_vertices.size();
     }
 
 */
-bool Graph::connexite(std::string nom_fichier)
+bool Graph::connexite()
 {
-    std::ifstream fichier(nom_fichier, std::ios::in);
-    int ordre;
-    fichier >> ordre;
-    int som=0;
-    int verif=0;
-    std::vector<bool> connexe;
-    std::stack<int> pile;
-    pile.push(som);
+    int nb_sommet=m_vertices.size(); // On affecte a ordre le nombre de sommets
 
-    for(int i=0; i<ordre; i++)
-        connexe.push_back(false);
+    int vertices=0;
+    int check=0;
 
+    std::vector<bool> connexe;  // Vecteur de bool
+    std::stack<int> pile;       // Pile
 
-    int matrice_adj[ordre][ordre];
-    for(int i=0; i<ordre; i++)
+    pile.push(vertices);
+
+    for(int i=0; i<nb_sommet; i++)
+        connexe.push_back(false);  //On rajoute au vecteur de bool connexe nb_sommet case que l'on met a false
+
+    while(!pile.empty())    // Tant que la pile est pas vide
     {
-        for(int j=0; j<ordre; j++)
-            fichier >> matrice_adj[i][j];
+        vertices=pile.top();
+        pile.pop();      // On retire la derniere valeur empilee de la pile
+        connexe[vertices]=true;
+
+        for(int i=0; i<nb_sommet; i++)
+        {
+            if(m_matriceadjacence[vertices][i]==1 && connexe[i]==false)   // On parcourt la matrice d'adjacence et le vecteur connexe
+            {
+                pile.push(i);      // On empile i
+                connexe[i]=true;   // On met le vecteur connexe a true
+            }
+        }
     }
 
-    while(!pile.empty())
-   {
-        som=pile.top();
-        pile.pop();
-        connexe[som]=true;
-        for(int i=0; i<ordre; i++)
-       {
-            if(matrice_adj[som][i]==1 && connexe[i]==false)
-            {
-                    pile.push(i);
-                    connexe[i]=true;
-            }
-       }
-   }
     for(int i=0; i<connexe.size(); i++)
-   {
-       if(connexe[i]==false)
-            verif++;
-   }
-   if(verif!=0)
+    {
+        if(connexe[i]==false)    // On parcout le vecteur connexe s'il est a faux on incremente check
+            check++;
+    }
+
+    if(check!=0)
         return false;
     else
         return true;
 
+}
 
+void Graph::dynamisme()  /// "P" pour activer le dynamisme
+{
+    if(key[KEY_P])
+    {
+        double D=1;
+        for(auto& A:m_vertices)
+        {
+            for(const auto& B: A.second.m_in)
+            {
+                for(auto& C:m_edges)
+                {
+                    D = D + m_vertices[B].m_value*C.second.m_weight;
+                    D=D/100;
+                }
+            }
+
+            if(A.second.m_value>0)
+            {
+                A.second.m_value = A.second.m_value + 0.0001*A.second.m_value*(1-A.second.m_value/D);  //On diminue le poids de tous les sommets plus rapide si 0.0001 >
+            }
+        }
+    }
 }
 
