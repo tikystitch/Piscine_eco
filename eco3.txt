@@ -1,13 +1,11 @@
 5
-6
-0 1.42857 156 11 ours1.bmp
-1 1.42857 537 -18 morse1.bmp
-2 1.42857 449 402 petit_poisson1.bmp
-3 3 160 249 macareux1.bmp
-4 3 711 219 pingouin1.bmp
-0 1 0 3
-1 1 2 50
-2 1 3 3
-3 3 2 4
-4 2 4 50
-5 4 1 43
+4
+0 55.3442 113 15 ours1.bmp
+1 61.3177 345 16 morse1.bmp
+2 56.9843 635 12 petit_poisson1.bmp
+3 50.7322 332 343 macareux1.bmp
+4 64.4746 560 337 pingouin1.bmp
+0 1 0 93
+1 2 1 99
+2 3 1 93
+3 3 2 94
